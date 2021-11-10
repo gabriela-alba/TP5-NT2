@@ -33,7 +33,8 @@
         MIN         : 3, 
         valor       : 6,
         colors      : [],
-        pickedColor : '' 
+        pickedColor : '',
+        arrContainarColor:[] 
       }
     },
     methods: {
@@ -67,9 +68,11 @@
       restart() {
         let posi = this.pickColor( this.valor )
         this.colors = this.createNewColors( this.valor );
+        this.arrContainarColor = this.setArrContainarColor(this.colors) 
         this.pickedColor =  this.colors[posi]
         this.$emit( "setColor", this.pickedColor )
         this.$emit( "arrColors", this.colors )
+        this.$emit( "arrBackGronunColor", this.arrContainarColor)
       }
 
     },

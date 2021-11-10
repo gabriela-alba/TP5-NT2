@@ -3,7 +3,9 @@
   <section class="src-components-juego">
 
       <div id="header" :style="getColorHeader()" >
-         <Header :color="color"></Header>
+         <Header  :color="color"
+                  :colorHeader="colorHeader"
+         ></Header>
       </div>
       
       <div id="navigator">
@@ -12,6 +14,7 @@
                       @setCant="setValor"
                       @setColor="setColor"
                       @arrColors="setArrColors"
+                      @arrBackGronunColor="setBackGronunColor"
                       >
           </NavigatorA>
       </div>
@@ -19,6 +22,7 @@
       <div id="container">
           <Containar :cant="cant" 
                      :arrColors="arrColors"
+                     :arrBackGronunColor="arrBackGronunColor"
                      @colorSelect="colorSelect"
                      >
           </Containar>
@@ -48,12 +52,14 @@
     data () {
 
       return {
-        color       : 'RGB(110, 96, 166)',
-        colorHeader : 'steelblue',
-        msj         : 'dasd',
-        cant        : 6,
-        arrColors   : [],
-        msjButton   : 'New colors'
+        color               : 'RGB(110, 96, 166)',
+        colorHeader         : 'steelblue',
+        msj                 : 'dasd',
+        cant                : 6,
+        arrColors           : [],
+        arrBackGronunColor  : [],
+   //     auxArr              : [],
+        msjButton           : 'New colors'
       }
 
     },
@@ -71,6 +77,17 @@
       setArrColors(valor) {
           this.msjButton = 'New colors'
           this.arrColors = valor
+     //     this.auxArr = []
+          this.arrBackGronunColor = []
+      },
+
+      setBackGronunColor( valor ) {
+//        console.log(this.auxArr.length)
+ //       if(this.auxArr.length === 0) {
+          this.arrBackGronunColor = valor
+ //         this.auxArr = valor
+  //      }else
+ //         this.arrBackGronunColor = this.auxArr
       },
 
       getColorHeader() {
@@ -80,16 +97,25 @@
       colorSelect(valor) {
         if( this.color === valor ) {
           this.msjButton = "PLAY AGAIN!"
+          this.colorHeader = valor
           console.log("sd")
         } else {
           console.log('no es')
-          // for ( let index = 0; index < this.arrColors.length; index++ ) {
-          //     if( this.arrColors[index] === valor ) {
-          //           this.arrColors[index] = "rgb(35, 35, 35)"
-          //     }
-          // }
         }
-      }
+        //  let arr = []
+       /*   let col = ''
+          for ( let index = 0; index < this.arrColors.length; index++ ) {
+                col = this.arrColors[index] === valor ? this.setStyleBr("rgb(35, 35, 35)") : this.auxArr[index]
+                arr.push(col)
+           }
+           console.log(arr)
+           this.auxArr = arr
+           console.log(this.auxArr.length)
+        } */
+      },
+      setStyleBr( color ){
+            return {  'background': color  }
+        }
 
     },
     computed: {

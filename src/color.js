@@ -24,8 +24,17 @@ export const funcionColor = {
             return Math.floor(Math.random() * quantity );
         },
 
-        selectDiv( ){
-            return "rgb(35, 35, 35)"
+        setArrContainarColor(arrColor){
+           let arr = []
+            for (let index = 0; index < arrColor.length; index++) {
+                arr.push( this.setStyle(arrColor[index]) )
+            }
+            return arr;
+        },
+
+        setStyle( color ){
+            return {  'background': color  }
         }
+
     }
 }

@@ -3,7 +3,7 @@
   <section class="src-components-header">
     
       <h1>The Great <br>
-        <span id="colorDisplay">{{ color }}</span>
+        <span id="colorDisplay" :style="getColorHeader()">{{ color }}</span>
         <br>
         Guessing Game
       </h1>
@@ -29,6 +29,9 @@
       }
     },
     methods: {
+      getColorHeader() {
+        return { 'background-color': this.colorHeader }
+      }
     },
     computed: {
 

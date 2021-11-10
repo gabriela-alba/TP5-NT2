@@ -6,7 +6,7 @@
           v-for="i in cant " 
           :key='i' 
           @click="verificarColor(i)"
-          :style="setBackgronuncolor(i)"
+          :style="arrBackGronunColor[i-1]"
     ></div>
   
   </section>
@@ -14,26 +14,27 @@
 </template>
 
 <script>
-
+  
+  
   export default  {
     name: 'src-components-containar',
     props: [
       'cant',
-      'arrColors'
+      'arrColors',
+      'arrBackGronunColor'
     ],
     mounted () {
       
     },
     data () {
       return {
-        arrBackColor        : [],
-        arrBackGronunColor  : []
+        arrBackColor  : []
       }
     },
     methods: {
 
         setBackgronuncolor( indice ) {
-          return {  'background': this.arrColors[ indice - 1 ]  }
+          return this.arrBackGronunColor[indice-1]// {  'background': this.arrColors[ indice - 1 ]  }
         },
 
         verificarColor(indice) {
