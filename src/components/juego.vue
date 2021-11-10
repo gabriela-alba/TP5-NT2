@@ -8,6 +8,7 @@
       
       <div id="navigator">
           <NavigatorA :mensaje="msj" 
+                      :msjButton="msjButton"
                       @setCant="setValor"
                       @setColor="setColor"
                       @arrColors="setArrColors"
@@ -45,13 +46,16 @@
 
     },
     data () {
+
       return {
         color       : 'RGB(110, 96, 166)',
         colorHeader : 'steelblue',
         msj         : 'dasd',
         cant        : 6,
-        arrColors   : []
+        arrColors   : [],
+        msjButton   : 'New colors'
       }
+
     },
     methods: {
       
@@ -65,6 +69,7 @@
       },
 
       setArrColors(valor) {
+          this.msjButton = 'New colors'
           this.arrColors = valor
       },
 
@@ -74,10 +79,15 @@
 
       colorSelect(valor) {
         if( this.color === valor ) {
-          this.msj = "You Picked Right!"
+          this.msjButton = "PLAY AGAIN!"
           console.log("sd")
         } else {
-          console.log("no es")
+          console.log('no es')
+          // for ( let index = 0; index < this.arrColors.length; index++ ) {
+          //     if( this.arrColors[index] === valor ) {
+          //           this.arrColors[index] = "rgb(35, 35, 35)"
+          //     }
+          // }
         }
       }
 

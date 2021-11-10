@@ -17,7 +17,8 @@
   export default  {
     name: 'src-components-header',
     props: [
-      'color'
+      'color',
+      'colorHeader'
       ],
     mounted () {
        

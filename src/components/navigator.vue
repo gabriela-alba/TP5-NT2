@@ -2,11 +2,11 @@
 
   <section class="src-components-navigator">
    
-    <button id="reset" @click="restart()"> New colors </button>
-		<span id="message">{{ mensaje }}</span>
+    <button id="reset" @click="restart()"> {{ msjButton }} </button>
+		<span id="message"> {{ mensaje }} </span>
 
-		<button id="easy" @click="easy()" :style="getColorEasy()">easy</button>
-		<button id="hard" @click="hard()" :style="getColorHard()">hard</button>
+		<button id="easy" @click="easy()" :style="getColorEasy()" > easy </button>
+		<button id="hard" @click="hard()" :style="getColorHard()" > hard </button>
 
       
   </section>
@@ -19,7 +19,10 @@
 
   export default  {
     name: 'src-components-navigator',
-    props: [ 'mensaje' ],
+    props: [ 
+      'mensaje', 
+      'msjButton'
+     ],
     mounted () {
         this.restart() 
     },

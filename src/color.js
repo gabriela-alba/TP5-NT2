@@ -22,6 +22,10 @@ export const funcionColor = {
 
         pickColor( quantity ){
             return Math.floor(Math.random() * quantity );
+        },
+
+        selectDiv( ){
+            return "rgb(35, 35, 35)"
         }
     }
 }
