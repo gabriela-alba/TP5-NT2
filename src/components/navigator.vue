@@ -1,14 +1,11 @@
 <template>
 
-  <section class="src-components-navigator">
-   
+  <section class="src-components-navigator"> 
     <button id="reset" @click="restart()"> {{ msjButton }} </button>
 		<span id="message"> {{ mensaje }} </span>
 
 		<button id="easy" @click="easy()" :style="getColorEasy()" > easy </button>
 		<button id="hard" @click="hard()" :style="getColorHard()" > hard </button>
-
-      
   </section>
 
 </template>
@@ -38,13 +35,11 @@
       }
     },
     methods: {
-
       easy() {
         this.valor = this.MIN
         this.$emit("setCant", this.MIN)
         this.restart() 
       },
-
       hard() {
         this.valor = this.MAX
         this.$emit("setCant", this.MAX)
@@ -57,14 +52,12 @@
                   'color': 'white'
           } : ''
       },
-
       getColorHard() {
           return this.valor === this.MAX ? {
                 'background-color': 'steelblue',
                   'color': 'white'
           } : ''
       },
-
       restart() {
         let posi = this.pickColor( this.valor )
         this.colors = this.createNewColors( this.valor );
@@ -80,8 +73,6 @@
 
     }
 }
-
-
 </script>
 
 <style scoped lang="css">

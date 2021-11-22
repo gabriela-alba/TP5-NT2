@@ -58,7 +58,6 @@
         cant                : 6,
         arrColors           : [],
         arrBackGronunColor  : [],
-   //     auxArr              : [],
         msjButton           : 'New colors'
       }
 
@@ -77,17 +76,11 @@
       setArrColors(valor) {
           this.msjButton = 'New colors'
           this.arrColors = valor
-     //     this.auxArr = []
           this.arrBackGronunColor = []
       },
 
       setBackGronunColor( valor ) {
-//        console.log(this.auxArr.length)
- //       if(this.auxArr.length === 0) {
           this.arrBackGronunColor = valor
- //         this.auxArr = valor
-  //      }else
- //         this.arrBackGronunColor = this.auxArr
       },
 
       getColorHeader() {
@@ -102,21 +95,10 @@
         } else {
           console.log('no es')
         }
-        //  let arr = []
-       /*   let col = ''
-          for ( let index = 0; index < this.arrColors.length; index++ ) {
-                col = this.arrColors[index] === valor ? this.setStyleBr("rgb(35, 35, 35)") : this.auxArr[index]
-                arr.push(col)
-           }
-           console.log(arr)
-           this.auxArr = arr
-           console.log(this.auxArr.length)
-        } */
       },
       setStyleBr( color ){
             return {  'background': color  }
         }
-
     },
     computed: {
 

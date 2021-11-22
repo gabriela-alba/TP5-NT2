@@ -1,6 +1,6 @@
 <template>
 
-  <section class="src-components-containar">
+  <section class="src-components-color">
     
     <div  class="square" 
           v-for="i in cant " 
@@ -13,11 +13,9 @@
 
 </template>
 
-<script>
-  
-  
+<script>   
   export default  {
-    name: 'src-components-containar',
+    name: 'src-components-color',
     props: [
       'cant',
       'arrColors',
@@ -46,12 +44,10 @@
 
     }
 }
-
-
 </script>
 
 <style scoped lang="css">
-  .src-components-containar {
+  .src-components-color {
 
   }
 </style>

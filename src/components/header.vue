@@ -13,7 +13,6 @@
 </template>
 
 <script>
-
   export default  {
     name: 'src-components-header',
     props: [
@@ -37,8 +36,6 @@
 
     }
 }
-
-
 </script>
 
 <style scoped lang="css">
