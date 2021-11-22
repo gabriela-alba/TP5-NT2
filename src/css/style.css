@@ -21,7 +21,6 @@ h1 {
 }
 #header {
 	transition: all 0.3s;
-	/* background: steelblue; */
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0;
@@ -35,7 +34,6 @@ h1 {
 
 .square {
 	width: 30%;
-	/* background: blue; */
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.66%;

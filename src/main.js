@@ -5,12 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
-
 import './css/style.css'
 
 
 Vue.config.productionTip = false
-// import './axios'
 
 new Vue({
   render: h => h(App),

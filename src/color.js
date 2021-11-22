@@ -1,6 +1,6 @@
 export const funcionColor = {
     methods : {
-
+        /*Crea el nuevo color*/ 
         createNewColors(numbers){
             let arr = []
             for (let i = 0; i < numbers; i++) {
